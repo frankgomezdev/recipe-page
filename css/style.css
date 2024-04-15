@@ -48,6 +48,7 @@ body {
     background-color: var(--clr-eggshell);
     color: var(--clr-wenge-brown);
     font-family: var(--ff-outfit);
+    height: 1955px;
 }
 
 img, picture, video, canvas, svg {
@@ -143,7 +144,7 @@ td {
     justify-content: center;
     max-width: 736px;
     margin-inline: auto;
-    margin-block: 3rem;
+    margin-block: 7rem;
     background-color: var(--clr-white);
     border-radius: 24px;
     padding: 40px;
