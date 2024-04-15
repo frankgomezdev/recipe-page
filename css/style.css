@@ -13,7 +13,8 @@
     --fs-400: 1rem; /* 16px */
     --fs-500: 1.25rem; /* 20px */
     --fs-600: 1.75rem; /* 28px */
-    --fs-700: 2.5rem; /* 40px */
+    --fs-700: 2.25rem; /* 36px */
+    --fs-800: 2.5rem; /* 40px */
 
     --clr-dark-charcoal: #312E2C;
     --clr-dark-raspberry: #7A284E;
@@ -36,6 +37,12 @@ html {
     
 }
 
+main {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     margin: 0;
     background-color: var(--clr-eggshell);
@@ -51,7 +58,7 @@ img, picture, video, canvas, svg {
 
 h1 {
     font-family: var(--ff-young-serif);
-    font-size: var(--fs-700);
+    font-size: var(--fs-800);
     font-weight: var(--fw-normal);
     color: var(--clr-dark-charcoal);
     line-height: 1.2;
@@ -78,6 +85,7 @@ h3 {
 
 p {
     font-family: var(--ff-outfit);
+    margin-block-end: 0;
 }
 
 span {
@@ -102,18 +110,32 @@ ul li::before, ol li::before {
     
 }
 
-
-
 ul li:not(:last-child),
 ol li:not(:last-child) {
     margin-bottom: 8px; 
 }
 
-main {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
+table {
+    border-collapse: collapse;
+    border-spacing: 10px;
+    width: 100%;
+    margin: 10px 0;
+    color: var(--clr-wenge-brown)
 }
+
+tr {
+    border-bottom: 1px solid var(--clr-white-coffee);
+}
+
+tr:last-child {
+    border: none;
+}
+
+td {
+    padding: 10px 20px;
+}
+
+
 
 .recipe-card {
     display: flex;
@@ -133,13 +155,63 @@ main {
     background-color: var(--clr-snow);
 }
 
+.recipe-card-content-prep li::marker {
+    color: var(--clr-brandy-red);
+    font-size: 0.9rem;
+}
+
 .hr {
     border-top: 1px solid var(--clr-white-coffee); 
     margin-top: 32px;
-    width: 100%;
+    /* width: 100%; */
 }
 
+.recipe-card-content-ingredients li::marker {
+    color: var(--clr-brandy-red);
+    font-size: 0.9rem;
+    
+}
 
+.recipe-card-content-instructions li::marker {
+    color: var(--clr-brandy-red);
+    font-weight: var(--fw-black);
+    font-family: var(--ff-outfit);
+}
+
+.value {
+    color: var(--clr-brandy-red);
+    font-weight: var(--fw-black);
+}
+
+@media (max-width: 560px) {
+    .recipe-card {
+        width: 100%;
+        border-radius: 0;
+        padding: 0px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 15px;
+    }
+
+    h1 {
+        font-size: var(--fs-700);
+    }
+
+    img {
+        border-radius: 0;
+    }
+
+    .recipe-card-content-title, .recipe-card-content-prep, .recipe-card-content-ingredients, .recipe-card-content-instructions, .recipe-card-content-nutrition, .hr {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .recipe-card-content-prep {
+        border-radius: 12px;
+    }
+
+    
+}
 
 
 
